@@ -1,7 +1,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_login_page" android:title="Login Page" />
+    <item android:id="@+id/menu_history" android:title="Sleep History" />
     <item android:id="@+id/menu_about" android:title="About Us" />
     <item android:id="@+id/menu_team" android:title="Team Details" />
-    <item android:id="@+id/menu_members" android:title="Team Member" />
+    <item android:id="@+id/menu_members" android:title="Team Members" />
+    <item android:id="@+id/menu_member_profiles" android:title="Member Description" />
     <item android:id="@+id/menu_project" android:title="Project Description" />
-    <item android:id="@+id/menu_exit" android:title="Exit App" />
+    <item android:id="@+id/menu_logout" android:title="Logout" />
 </menu>

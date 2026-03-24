@@ -2,36 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/project_bg"
+    android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:paddingTop="24dp"
+    android:paddingBottom="20dp">
 
     <TextView
-        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sleep History"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="12dp" />
+        android:textColor="@color/surface_light"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/searchEdit"
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Search date"
-        android:layout_marginBottom="12dp" />
-
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Clear History"
-        android:layout_marginBottom="12dp" />
+        android:layout_marginTop="8dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="Swipe cards left or right. The center card stays in front while the side cards appear behind it."
+        android:textAlignment="center"
+        android:textColor="@color/soft_text" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="24dp"
         android:layout_weight="1" />
 
+    <TextView
+        android:id="@+id/tvEmptyHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="No saved sleep cards yet."
+        android:textColor="@color/surface_light"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="20dp"
+        android:text="Clear History" />
 </LinearLayout>

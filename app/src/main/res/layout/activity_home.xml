@@ -5,64 +5,253 @@
     android:layout_height="match_parent"
     android:background="@drawable/project_bg">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_navy"
+        android:elevation="4dp"
+        app:title="Sleep Tracker"
+        app:titleTextColor="@color/surface_light" />
+
+    <ImageButton
+        android:id="@+id/btnMoreOptions"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignTop="@id/toolbarHome"
+        android:layout_alignBottom="@id/toolbarHome"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="More options"
+        android:padding="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_more_vertical_custom" />
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/accent_gold"
+        android:text="Open Sleep History"
+        android:textColor="@color/deep_navy" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bottom_navigation"
+        android:layout_below="@id/toolbarHome"
+        android:layout_above="@id/btnHistory"
         android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:gravity="center">
+            android:padding="18dp">
 
-            <Button
-                android:id="@+id/btnBirthday"
-                android:text="Set Birthday"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"/>
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:padding="20dp">
 
-            <Button
-                android:id="@+id/btnStartService"
-                android:text="Start Sleep Tracking"
+                <TextView
+                    android:id="@+id/tvUserHeadline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/surface_light"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Today's sleep log"
+                    android:textColor="@color/soft_text"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvSleepPreference"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/accent_gold"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Bedtime"
+                    android:textColor="@color/soft_text" />
+
+                <TextView
+                    android:id="@+id/tvBedtimeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/not_set"
+                    android:textColor="@color/surface_light"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnPickBedtime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/accent_blue"
+                    android:text="Pick Bedtime"
+                    android:textColor="@color/surface_light" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Recommended wake-up"
+                    android:textColor="@color/soft_text" />
+
+                <TextView
+                    android:id="@+id/tvWakeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/not_set"
+                    android:textColor="@color/accent_mint"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTodaySummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:textColor="@color/surface_light"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Foreground service status"
+                    android:textColor="@color/soft_text" />
+
+                <TextView
+                    android:id="@+id/tvServiceStatusValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Not running"
+                    android:textColor="@color/accent_gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvServiceStartedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Start time: --"
+                    android:textColor="@color/soft_text"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnSaveToday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/accent_mint"
+                    android:text="Save Today's Sleep"
+                    android:textColor="@color/deep_navy" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginTop="16dp"
+                android:background="@drawable/panel_bg"
+                android:orientation="vertical"
+                android:padding="18dp">
 
-            <Button
-                android:id="@+id/btnStopService"
-                android:text="Stop Sleep Tracking"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Utilities"
+                    android:textColor="@color/surface_light"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnLocation"
-                android:text="Get Current Location"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"/>
+                <Button
+                    android:id="@+id/btnEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Edit Profile" />
 
-            <Button
-                android:id="@+id/btnSendSMS"
-                android:text="Send Emergency SMS"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                <Button
+                    android:id="@+id/btnLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Get Current Location" />
 
+                <TextView
+                    android:id="@+id/tvLocationValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/location_not_checked"
+                    android:textColor="@color/soft_text" />
+
+                <Button
+                    android:id="@+id/btnSendSMS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Send Alert SMS" />
+
+                <Button
+                    android:id="@+id/btnStartService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Start Foreground Service" />
+
+                <Button
+                    android:id="@+id/btnStopService"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Stop Foreground Service" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="Sleep playlist"
+                    android:textColor="@color/surface_light"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnPlayPlaylist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Play Playlist" />
+
+                <Button
+                    android:id="@+id/btnNextTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Next Track" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="#FFFFFF"
-        app:itemIconTint="#3F51B5"
-        app:itemTextColor="#3F51B5"
-        app:menu="@menu/bottom_nav_menu" />
-
 </RelativeLayout>

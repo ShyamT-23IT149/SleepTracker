@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp"
-    android:gravity="center">
+    android:background="@drawable/project_bg"
+    android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/tvTeamTitle"
-        android:textSize="28sp"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:id="@+id/imgTeam"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/app_logo"
-        android:layout_margin="20dp"
-        android:scaleType="fitCenter"/>
-
-    <TextView
-        android:id="@+id/tvTeamDesc"
-        android:textSize="18sp"
-        android:textColor="#333333"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"/>
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="22dp">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/panel_bg"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvTeamTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/surface_light"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imgTeam"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="18dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                android:src="@drawable/app_logo" />
+
+            <TextView
+                android:id="@+id/tvTeamDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:textColor="@color/soft_text"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

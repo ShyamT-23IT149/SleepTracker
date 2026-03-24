@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="Theme.SleepTracker" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorPrimary">#00FF99</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimary">@color/accent_blue</item>
+        <item name="colorPrimaryVariant">@color/deep_navy</item>
+        <item name="colorOnPrimary">@color/surface_light</item>
+        <item name="colorSecondary">@color/accent_gold</item>
+        <item name="android:statusBarColor">@color/deep_navy</item>
+        <item name="android:navigationBarColor">@color/deep_navy</item>
     </style>
 </resources>

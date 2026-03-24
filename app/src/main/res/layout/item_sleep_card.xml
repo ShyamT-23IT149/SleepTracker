@@ -1,21 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
     android:background="@drawable/card_bg"
-    android:padding="16dp"
+    android:elevation="10dp"
     android:orientation="vertical"
-    android:layout_width="280dp"
-    android:layout_height="wrap_content">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/neon_green"
+        android:textColor="@color/accent_gold"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBedtime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/surface_light"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvWakeup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/surface_light"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/accent_mint"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvTrackedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/accent_gold"
         android:textSize="16sp" />
 
     <TextView
         android:id="@+id/tvDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/neon_green" />
-
+        android:layout_marginTop="16dp"
+        android:textColor="@color/soft_text"
+        android:textSize="15sp" />
 </LinearLayout>

@@ -1,29 +1,40 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sleeptracker">
 
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/app_logo" android:roundIcon="@drawable/app_logo" android:label="Sleep Tracker"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:icon="@drawable/app_logo"
+        android:label="Sleep Tracker"
+        android:roundIcon="@drawable/app_logo"
+        android:theme="@style/Theme.SleepTracker">
 
-        <activity android:name=".LoginActivity" android:exported="true">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".ProfileSetupActivity" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".HistoryActivity" />
         <activity android:name=".TeamActivity" />
 
-        <service android:name=".SleepForegroundService" android:foregroundServiceType="specialUse" />
+        <receiver
+            android:name=".ReminderReceiver"
+            android:exported="false" />
 
+        <service
+            android:name=".SleepForegroundService"
+            android:foregroundServiceType="dataSync" />
     </application>
 </manifest>
